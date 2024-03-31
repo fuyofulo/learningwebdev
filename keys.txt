@@ -1,0 +1,10 @@
+mongo db first database 
+username: fuyofulo
+password: sEHFqEhUkloaLjsq
+url: mongodb+srv://fuyofulo:sEHFqEhUkloaLjsq@cluster0.qir16f2.mongodb.net/
+
+
+neon tech
+postgresql://pheonixdiaz625:kUFE2bQ0Isiw@ep-divine-shape-a5kgh4o4.us-east-2.aws.neon.tech/test?sslmode=require
+
+
