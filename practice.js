@@ -1,57 +1,23 @@
-class Todo {
-    constructor() {
-      this.todos = [];
-    }
-  
-    add(todo) {
-      this.todos.push(todo);
-    }
-  
-    remove(indexOfTodo) {
-      this.todos.splice(indexOfTodo, 1);
-    }
-  
-    update(index, updatedTodo) {
-      console.log("Before update:", this.todos);
-      this.todos[index] = updatedTodo;
-      console.log("After update:", this.todos);
-    }
-  
-    getAll() {
-      return this.todos;
-    }
-  
-    get(indexOfTodo) {
-      console.log("Todo at index", indexOfTodo, ":", this.todos[indexOfTodo]);
-      return this.todos[indexOfTodo];
-    }
-  
-    clear() {
-      this.todos = [];
-    }
-  }
-  
-// Your custom tests
-const todoList = new Todo();
+//learning express
 
-// Test adding todos
-todoList.add('Task 1');
-todoList.add('Task 2');
-todoList.add('Task 3');
+const express = require('express');
+const app = express();
+app.listen(3000);
+app.use(express.json());
 
-// Test updating a todo
-todoList.update(1, 'Updated Task 2');
+app.get('/', (req,res) => {
+  res.json("Hello World");
+});
 
-// Test getting a todo
-console.log(todoList.get(1)); // Should output 'Updated Task 2'
+app.get('/name', (req,res) => {
+  const name = req.body.name;
+  const message = "Hello "+name;
+  res.json(message);
+});
 
-// Test removing a todo
-todoList.remove(2); // Remove 'Task 3'
-console.log(todoList);
-
-// Test clearing all todos
-todoList.clear();
-
-// Check if todos are cleared
-console.log(todoList.getAll()); // Should output []
-  
+app.post('/', (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = "Received name: " + name + ", Received email: " + email;
+  res.json({message});
+});
