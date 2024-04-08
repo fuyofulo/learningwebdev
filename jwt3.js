@@ -52,7 +52,7 @@ function decodeJwt(token) {
 // verify: console.log(verifyJwt(signature));
 // decode: 
 
-console.log(signJwt("fuyofulo@gmail.com", "password123"));
+console.log(signJwt("fuyofulol@gmail.com", "password123"));
 //token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZ1eW9mdWxvQGdtYWlsLmNvbSIsImlhdCI6MTcxMjU4NTQ3NH0.u0HkPB7MSS9zdqEKzeJp_AFgjHK31dcfE5a4FVWf_Ok
 
 console.log(verifyJwt("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZ1eW9mdWxvQGdtYWlsLmNvbSIsImlhdCI6MTcxMjU4NTQ3NH0.u0HkPB7MSS9zdqEKzeJp_AFgjHK31dcfE5a4FVWf_Ok"));
