@@ -1,0 +1,21 @@
+<html>
+    <script>
+        async function calculateInterest() {
+            let a = document.getElementById("principle").value;
+            let b = document.getElementById("rate").value;
+            let c = document.getElementById("time").value;
+            const response = await fetch("https://sum-server.100xdevs.com/interest?principal="+a+"&rate="+b+"&time="+c);
+            const ans = await response.text();
+            const element = document.getElementById("final value")
+            element.innerHTML = ans;
+
+        }
+    </script>
+    <body>
+        <input id="principle" type="text" placeholder="principle amount"></input><br></br>
+        <input id="rate" type="text" placeholder="rate"></input><br></br>
+        <input id="time" type="text" placeholder="time"></input><br></br>
+        <button onclick="calculateInterest()">calculate interest</button><br></br>
+        <div id="final value"></div>
+    </body>
+</html>
