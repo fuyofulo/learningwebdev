@@ -7,12 +7,6 @@ app.use(cors());
 app.use(express.json());
 app.listen(3000);
 
-
-// body: {
-//  title: String,
-// description: String,
-// }
-
 app.post('/todo', async (req, res) => {
     const createPayload = req.body;
     const parsedPayload = createTodo.safeParse(createPayload)
