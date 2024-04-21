@@ -1,15 +1,13 @@
-const FoodItems = () => {
+import Item from "./item";
 
-    let foodItems = ["Fruits", "Vegetables", "Pulses", "Grians", "Ice cream"];
-    //let foodItems = [];
-
+const FoodItems = ({ items }) => {
   return (
     <ul className="list-group">
-      {foodItems.map((item) => (
-        <li class="list-group-item">{item}</li>
+      {items.map((item) => (
+        <Item key={item} foodItems={item}></Item>
       ))}
     </ul>
   );
 };
 
-export default [FoodItems, foodItems];
+export default FoodItems;
