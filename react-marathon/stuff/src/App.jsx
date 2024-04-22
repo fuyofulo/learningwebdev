@@ -3,12 +3,12 @@ import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
 
 function App() {
-  let foodItems = ["Fruits", "Vegetables", "Pulses", "Grians", "Ice cream"];
+  let foodItems = ["hahaha", "Vegetables", "Pulses", "Grains", "Ice cream"];
   //let foodItems = [];
-
+  
   return (
     <>
-      <h1>Healthy food items</h1>
+      <h2>Healthy food items</h2>
       <ErrorMessage items={foodItems}></ErrorMessage>
       <FoodItems items={foodItems}></FoodItems>
       <h3>hello</h3>
