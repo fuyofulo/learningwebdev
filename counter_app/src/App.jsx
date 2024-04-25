@@ -1,36 +1,33 @@
-
 import { useState } from "react";
 
-
 function App() {
-  const [todos, setTodos] = useState([{
-    title: "Go ot gym",
-    description: "7-9 pm",
-    completed: false
-  }, {
-    title: "study DSA",
-    description: "9-11 pm",
-    completed: true
-  }]);
+  return (
+    <>
+      <ButtonWithHeader />
+      <Header title="zaid2"></Header>
+      <Header title="zaid2"></Header>
+      <Header title="zaid2"></Header>
+      <Header title="zaid2"></Header>
+    </>
+  );
+}
 
-  
+function ButtonWithHeader() {
+  let [title, setTitle] = useState("My name is Zaid");
+  const changeTitle = () => {
+    setTitle(`My name is ${Math.random()}`);
+  };
 
   return (
-      <div>
-        {JSON.stringify(todos)}
-      </div>
-  )
+    <>
+      <button onClick={changeTitle}>Update title</button>
+      <Header title={title}></Header>
+    </>
+  );
 }
 
-function CustomButton(props) {
-
-  function onClinkHandler() {
-    props.setCount(props.count+1);
-  }
-
-  return <button onClick={onClinkHandler}>
-  Counter {props.count}
-  </button>
+function Header({title}) {
+  return <div>{title}</div>
 }
 
-export default App
+export default App;
