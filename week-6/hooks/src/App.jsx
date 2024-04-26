@@ -1,25 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 let counter = 3;
 
 function App() {
-  let [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "go to gym",
-      description: "6-7 AM",
-    },
-    {
-      id: 2,
-      title: "go to class",
-      description: "9-3 PM",
-    },
-    {
-      id: 3,
-      title: "go to mosque",
-      description: "8-9 PM",
-    },
-  ]);
+  let [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://sum-server.100xdevs.com/todos")
+    .then(function(response) {
+      setTodos(response.data.todos)
+    })
+  }, [])
 
   function AddTodo() {
     counter++;
@@ -31,11 +23,13 @@ function App() {
         description: Math.random(),
       },
     ]);
+    console.log("todo added");
+    console.log(todos);
   }
 
   return (
     <div>
-      <button onClick={AddTodo}>Add a todo</button>
+      <button onClick={AddTodo}>add a todo</button>
       {todos.map((todo) => (
         <Todo
           id={todo.id}
@@ -50,11 +44,11 @@ function App() {
 function Todo({ id, title, description }) {
   return (
     <>
-      <h2>{id}</h2>
-      <h3>{title}</h3>
-      <h4>{description}</h4>
+      <div>{id}</div>
+      <div>{title}</div>
+      <div>{description}</div>
+      <br></br>
     </>
   );
 }
-
 export default App;
