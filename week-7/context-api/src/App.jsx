@@ -17,6 +17,7 @@ function App() {
 }
 
 function Count() {
+  console.log("count is rerendering");
   return (
     <div>
       <CountRendered />
