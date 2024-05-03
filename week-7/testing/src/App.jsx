@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <CountContext.Provider value={{ count, setCount }}>
-        <Count count={count} setCount={setCount} />
+        <Count />
       </CountContext.Provider>
     </div>
   );
